@@ -1,0 +1,29 @@
+<h1>
+  {{variable}}
+</h1>
+<!--string interpolation-->
+<h3>{{3 + 5}}</h3>
+<img src="{{imgUrl}}" alt="image">
+<!--property binding-->
+<img [src]="imgUrl" alt="image">
+<h3 class="text_color">The Angular Project</h3>
+<!--class binding-->
+<h3 [class.text_color]="bool">The Angular Project</h3>
+<!--style binding-->
+<h1 [style.color]="bool?'red':'skyblue'">Obsessed</h1>
+
+<!--Event Binding-->
+<button (click)="onClick()">Click Me</button>
+
+<!--Event Filtering-->
+<input type="text" (keyup)="onKeyUp($event)">
+<h2>You pressed this much keys till now {{count}}</h2>
+<p>{{sum}}</p>
+
+<input type="text" (keyup.enter)="keyPress()"><br><br>
+
+<!--Template Variable-->
+<input type="text" (keyup)="onKey($event)"><br>
+<br>
+<h3>The Template Variable</h3>
+<input type="text" (keyup)="onKey(username.value)" #username>
