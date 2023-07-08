@@ -2,3 +2,9 @@
 <input type="text" [(ngModel)]="username" (keyup.enter)="onKeyUp()">
 <h3>{{message}}</h3>
 
+<!--one Way Data Binding-->
+<input type="text" [value]='textValue' (keyup.enter)="onKeyUpT()">
+<br>
+<br>
+<!--With Two way data binding-->
+<input type="text" [(ngModel)]="textValue2" (keyup.enter)="onKeyUpTs()">
