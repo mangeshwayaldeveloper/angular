@@ -1,0 +1,17 @@
+<form class="formAlignment">
+  <h1> Post Form </h1><br><br>
+  <input type="text" placeholder="post title" name="title" [(ngModel)]="postTitleText" (keyup)="OnKey()"><br><br>
+  <textarea placeholder="Post Details" rows="10" cols="24" name="post details" [(ngModel)]="postDetailsText"
+            (keyup)="OnKey2()"></textarea><br><br>
+  <input type="text" placeholder="Post Image Url" name="image" [(ngModel)]="imageUrl" (keyup)="OnKey3()"><br><br>
+  <input type="text" placeholder="Post Url" name="url" [(ngModel)]="urlText" (keyup)="OnKey4()"><br><br>
+  <input type="checkbox" name="click" (click)="OnClick()"> Add Background
+</form>
+<div class="formAlignment">
+  <div [style.background-color]="showBgColor">
+    <h1 [style.font-weight]="'bold'">{{showTitle}}</h1>
+  </div>
+  <h5>{{showDetails}}</h5>
+  <img [src]="showImage" alt="image">
+  <a [href]="showUrl">Click Here</a>
+</div>
