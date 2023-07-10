@@ -1,0 +1,13 @@
+<div *ngIf="objArray.length>0">
+<ul>
+  <li *ngFor="let obj of objArray;let i=index">
+    {{obj|json}}
+    <button (click)="deleteObj(i)">Delete</button>
+  </li>
+</ul>
+</div>
+<div *ngIf="objArray.length==0">
+  <p>There is no data to fetch</p>
+</div>
+<button (click)="addArray()">Add Array</button>
+

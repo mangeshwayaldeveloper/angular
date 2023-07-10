@@ -1,0 +1,14 @@
+<div *ngIf="objArray.length>0;then list else noData"></div>
+<ng-template #list>
+  <ul>
+    <li *ngFor="let obj of objArray;let i=index">
+      {{obj|json}}
+      <button (click)="deleteObj(i)">Delete</button>
+    </li>
+  </ul>
+</ng-template>
+<button (click)="addObj()">Add Object
+</button>
+<ng-template #noData>
+  <p>No Data Available</p>
+</ng-template>

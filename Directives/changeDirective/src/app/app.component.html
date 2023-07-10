@@ -1,0 +1,8 @@
+<ul>
+  <li *ngFor="let obj of objArray;let i=index">
+    {{i}}{{obj|json}}
+    <button (click)="deleteObj(i)">Delete Object</button>
+  </li>
+</ul>
+<button (click)="addNew()">Add New Object</button><br><br>
+
