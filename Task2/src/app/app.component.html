@@ -1,0 +1,31 @@
+<h1 class="formAlignment" [ngStyle]="{marginTop:'40px'}">User Details</h1>
+<form class="formAlignment">
+  <input type="text" name="username" placeholder="username" required [(ngModel)]="username"><br><br>
+  <input type="text" name="email" placeholder="email" required [(ngModel)]="email"><br><br>
+  <textarea name="address" rows="10" cols="30" required [(ngModel)]="address" placeholder="address"></textarea><br><br>
+  <button type="submit" (click)="saveData()">Save Data</button>
+  <br>
+</form>
+<div *ngIf="details.length>0;else noData">
+<table class="table">
+  <tr>
+    <th>#</th>
+    <th>Name</th>
+    <th>Email</th>
+    <th>Address</th>
+    <th>Action</th>
+  </tr>
+  <tr *ngFor="let u of details;let i=index" #t>
+    <td>{{i + 1}}</td>
+    <td>{{u.username}}</td>
+    <td>{{u.email}}</td>
+    <td>{{u.address}}</td>
+    <td>
+      <button (click)="delete(i)">Delete</button>
+    </td>
+  </tr>
+</table>
+</div>
+<ng-template #noData>
+  <h4>No Data To Show</h4>
+</ng-template>

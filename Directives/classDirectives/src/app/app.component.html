@@ -1,0 +1,9 @@
+<h1>Ng Class Directives</h1>
+
+<div [class.main]="isActive"
+     [class.text-weight]="isActive">Regular Approach, style binding to class
+</div>
+
+<h1 [ngClass]="{'main':isActive,'text-weight':isActive}">
+ng Class Directive
+</h1>
