@@ -1,0 +1,48 @@
+<div class="container mt-5">
+  <div class="form-area">
+    <form #f="ngForm" (ngSubmit)="onSubmit(f)">
+      <div class="form-group">
+        <label for="name">Name</label>
+        <input type="text" id="name" placeholder="Enter your name" class="form-control" name="name" ngModel
+               #fullname="ngModel" (ngModelChange)="getValue(fullname)"
+               [ngClass]="{'is-invalid': fullname.touched && fullname.invalid}" minlength="5" maxlength="20" required>
+
+        <div *ngIf="fullname.touched && fullname.errors">
+          <div class="alert alert-danger" *ngIf="fullname.errors?.['required']">
+            Full name is required
+          </div>
+          <div class="alert alert-danger" *ngIf="fullname.errors?.['minlength']">
+            Name should be at least 5 characters long
+          </div>
+        </div>
+      </div>
+      <div class="form-group">
+        <label for="email">Email</label>
+        <input type="email" id="email" placeholder="Enter your email" class="form-control" name="email" ngModel
+               pattern="[a-z0-9._%+\-]+@[a-z0-9.\-]+\.[a-z]{2,}$" #email='ngModel'
+               [ngClass]="{'is-invalid': email.touched && email.invalid}" required>
+
+        <div *ngIf="email.touched && email.errors">
+          <div class="alert alert-danger" *ngIf="email.errors?.['required']">
+            Email Is Required
+          </div>
+          <div class="alert alert-danger" *ngIf="email.errors?.['pattern']">
+            Please enter valid email
+          </div>
+        </div>
+      </div>
+      <div class="form-group">
+        <label for="address">Address</label>
+        <textarea id="address" cols="30" rows="10" placeholder="Enter your address" class="form-control" name="address"
+                  ngModel #address='ngModel'  [ngClass]="{'is-invalid': address.touched && address.invalid}" required></textarea>
+        <div *ngIf="address.touched && address.errors">
+          <div class="alert alert-danger" *ngIf="address.errors?.['required']">
+            Address Required
+          </div>
+        </div>
+      </div>
+      <br>
+      <button type="submit" class="btn btn-primary" [disabled]="f.invalid" >Submit</button>
+    </form>
+  </div>
+</div>

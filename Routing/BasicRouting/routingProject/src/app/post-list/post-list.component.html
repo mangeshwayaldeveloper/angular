@@ -1,0 +1,5 @@
+<div *ngFor="let obj of posts;let post of posts;let i=index">
+  <h1>{{obj.title}}</h1>
+  <button [routerLink]="['/posts',i,post.title]">View Content</button>
+  <hr>
+</div>

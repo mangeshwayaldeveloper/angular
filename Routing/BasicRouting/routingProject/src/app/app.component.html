@@ -1,0 +1,10 @@
+<h1>Angular App</h1>
+<button routerLink="/"  routerLinkActive="active">Home</button><br><br>
+<button routerLink="/posts" routerLinkActive="active" [queryParams]="{page:1,oderBy:'newest'}">Post List</button><br>
+<br><br>
+<button (click)="BackToPost()">Back To Posts</button> <br><br>
+<button (click)="SinglePost()">Move To Specific Post</button><br><br>
+<button (click)="ToqueryParameter()">To Query Param</button><br><br>
+
+<router-outlet></router-outlet>
+
